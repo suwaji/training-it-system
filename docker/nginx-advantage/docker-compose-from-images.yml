@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+
+  nginx_from_step_images:
+    image: nginx-alpahine:latest
+    restart: unless-stopped
+    tty: true
+    container_name: nginx_from_step_images
+    ports:
+      - "8080:80"
+    networks:
+      - proxy
+
+networks:
+  proxy: {}

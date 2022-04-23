@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  nginx_from_step_build:
+    build: .
+    container_name: nginx_from_step_build
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8081:80"
+    networks:
+      - proxy
+
+networks:
+  proxy: {}
