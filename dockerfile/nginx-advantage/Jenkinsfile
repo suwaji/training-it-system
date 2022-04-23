@@ -1,0 +1,3 @@
+@Library('jenkins@development') _
+
+base_images_nginx()
