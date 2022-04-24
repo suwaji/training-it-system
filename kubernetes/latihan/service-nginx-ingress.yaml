@@ -42,7 +42,7 @@ metadata:
     name: nginx-ingress
 spec:
   rules:
-    - host: nginx.harsonosuwaji.local
+    - host: nginx.training.local
       http:
         paths:
           - path: /
