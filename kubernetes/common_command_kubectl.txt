@@ -1,0 +1,61 @@
+### cheatsheet kubectl
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+## create pod
+kubectl create -f pod.yml
+kubectl create -f pod-with-label.yml
+
+## delete pod
+kubectl get pod --show-labels
+kubectl delete pod -l manifest=development
+kubectl delete pod --all --namespace training
+
+## common command
+kubectl system
+kubectl get pod
+kubectl get namespaces
+kubectl get pods --namespaces kube-system
+kubectl get pod --show-labels
+kubectl exec -it nginx-replica-set-name-dqbcf -- /bin/sh
+
+### create namespace
+kubectl create -f namespaces.yml
+kubectl create -f pod-with-label.yml --namespace training
+
+## delete namespace
+kubectl delete training
+
+## probe adalah pengecekan tentang healt-check service di kubernetes
+    livenes == restart pod ketika ada error
+    readiness == ketika ada error semua pod akan di stop service
+    startup probe == ini seperti warming up sebelum menerima trafik
+kubectl create -f pod-with-probe.yaml
+kubectl describe pod nginx-with-probe
+
+## replica controller memastikan bahwa pod selalu running
+kubectl create -f replication-controller.yaml
+kubectl get replicationcontrollers
+kubectl get rc
+
+## replica set pengganti replicationcontrollers, bedanya lebih enak ketika mengguna jika memakai label selector
+kubectl create -f replica-set.yaml --namespace training
+
+## daemon-set ini fungsinya pod akan tercreate secara random atau bisa jalan di masing2 node
+   contohnya untuk monitoring untuk usage atau mau get log di setiap pod
+kubectl create -f daemon-set.yaml
+
+## job scheduler jalan sekali
+kubectl get jobs
+kubectl delete jobs nodejs-job-name
+
+## crond job scheduler sesuai jadwal
+kubectl get cronjobs nodejs-job-name
+
+## service
+kubectl create service.yaml
+kubectl delete all --all
+kubectl get endpoints
+
+## expose service ada 3
+node port, load balancer, ingress
+minikube service 

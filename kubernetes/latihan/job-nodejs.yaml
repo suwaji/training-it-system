@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nodejs-job
+spec:
+  completions: 4
+  parallelism: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: nodejs-job
+          image: harsonosuwaji/nodejs-job
+
+
+Kernel@Ndroid
+Kernel4Ndroid
+4NdroidKernel
+@NdroidKernel
