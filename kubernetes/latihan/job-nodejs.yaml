@@ -11,9 +11,3 @@ spec:
       containers:
         - name: nodejs-job
           image: harsonosuwaji/nodejs-job
-
-
-Kernel@Ndroid
-Kernel4Ndroid
-4NdroidKernel
-@NdroidKernel
