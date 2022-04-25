@@ -3,7 +3,7 @@ version: "3.3"
 services:
 
   nginx_from_step_images:
-    image: nginx-alpahine:latest
+    image: harsonosuwaji/nginx-advantage:latest
     restart: unless-stopped
     tty: true
     container_name: nginx_from_step_images
